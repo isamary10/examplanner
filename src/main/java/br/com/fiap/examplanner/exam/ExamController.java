@@ -30,7 +30,7 @@ public class ExamController {
   public String index(Model model, @AuthenticationPrincipal OAuth2User user){
     model.addAttribute("avatar_url", user.getAttribute("avatar_url"));
     model.addAttribute("username", user.getAttribute("name"));
-    model.addAttribute("exam", service.findAll());
+    model.addAttribute("exams", service.findAll());
     return "exam/index";
   }
 
@@ -53,7 +53,7 @@ public class ExamController {
   public String Save(@Valid Exam exam, BindingResult result, RedirectAttributes redirect){
     if (result.hasErrors()) return "/exam/form";
     service.save(exam);
-    redirect.addFlashAttribute("success", getMessage("exma.create.sucess"));
+    redirect.addFlashAttribute("success", getMessage("exam.create.sucess"));
     return "redirect:/exam";
   }
 

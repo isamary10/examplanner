@@ -2,6 +2,8 @@ package br.com.fiap.examplanner.exam;
 
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,12 +24,14 @@ public class Exam {
   @NotBlank
   String title;
 
+  @NotBlank
+  @DateTimeFormat(pattern = "dd-MM-yyyy")
+  LocalDate examDate;
+
   @Size(min = 10, message = "{exam.description.size}")
   String description;
 
   @Min(1) @Max(5)
   String level;
 
-  @NotBlank
-  LocalDate examDate;
 }
