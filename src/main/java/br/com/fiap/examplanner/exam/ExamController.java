@@ -53,7 +53,7 @@ public class ExamController {
   public String Save(@Valid Exam exam, BindingResult result, RedirectAttributes redirect){
     if (result.hasErrors()) return "/exam/form";
     service.save(exam);
-    redirect.addFlashAttribute("success", getMessage("exam.create.sucess"));
+    redirect.addFlashAttribute("success", getMessage("exam.create.success"));
     return "redirect:/exam";
   }
 
