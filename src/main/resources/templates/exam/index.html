@@ -50,12 +50,12 @@
         <div class="card">
           <div class="card-content">
             <div class="progress">
-              <div class="determinate" th:style="${'width:' + exam.status + '%'}"></div>
+              <div class="determinate" th:style="${'width:' + exam.level + '%'}"></div>
             </div>
             <span class="card-title" th:text="${exam.title}"></span>
             <p th:text="${exam.examDate}"></p>
             <p th:text="${exam.description}"></p>
-            <span data-badge-caption="level" class="new badge blue white-text" th:text="${exam.level}"></span>
+            <span data-badge-caption="score" class="new badge blue white-text" th:text="${exam.score}"></span>
           </div>
           <div class="card-action">
             <a th:href="${'/exam/delete/' + exam.id}" class="btn red lighten-1">

@@ -32,6 +32,9 @@ public class Exam {
   String description;
 
   @Min(1) @Max(5)
-  String level;
+  Integer level;
+
+  @Min(1) @Max(10)
+  Integer score;
 
 }
